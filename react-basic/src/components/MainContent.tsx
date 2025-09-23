@@ -1,6 +1,7 @@
 
 type Progress = {
   progress: number;
+  setProgress: React.Dispatch<React.SetStateAction<number>>
 }
 
 // 章タイトル
@@ -26,10 +27,19 @@ const chapters: string[] = [
   '生成AIでテストケースを作ろう'
 ];
 
-export function MainContent({ progress }: Progress) {
+export function MainContent({ progress, setProgress }: Progress) {
   // 章ごとのUUID
   const chapterKeys = chapters.map(() => crypto.randomUUID());
   console.log(chapterKeys)
+
+  // 進捗率を10%進める関数
+  const handlePeogress = () => {
+    if (progress < 100) {
+      setProgress(progress + 10);
+    }
+  };
+
+
 
 
   return (
@@ -46,6 +56,7 @@ export function MainContent({ progress }: Progress) {
         {progress === 100 && <p>100です</p>}
         {progress >= 50 && <p>50以上です</p>}
         {progress < 50 && <p>50以下です</p>}
+        <button onClick={handlePeogress}>10%進める</button>
       </section>
 
       <section>
