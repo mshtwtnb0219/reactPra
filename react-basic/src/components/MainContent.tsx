@@ -1,3 +1,5 @@
+import {ContactForm} from './ContactForm';
+
 
 type Progress = {
   progress: number;
@@ -9,22 +11,22 @@ const chapters: string[] = [
   'Reactの概要を理解しよう',
   'Reactでよく使われるJavaScriptの記法を理解しよう',
   'Reactの環境を構築しよう',
-  'JSXの基本を理解しよう',
-  'コンポーネントの基本を理解しよう',
-  '関数コンポーネントを作成しよう',
-  'propsでデータを受け渡す方法を理解しよう',
-  '条件分岐で表示を切り替える方法を理解しよう',
-  'リストの表示方法を理解しよう',
-  'React Hooksの基本を理解しよう',
-  'useStateで状態を管理する方法を理解しよう',
-  'イベント処理を理解しよう',
-  'フォームの操作を理解しよう',
-  'useEffectで副作用を管理する方法を理解しよう',
-  '生成AIによるエラーの対処方法を理解しよう',
-  'CSSによるスタイル調整方法を理解しよう',
-  'useContextでデータを共有する方法を理解しよう',
-  'Reactで簡単なカウンターアプリを作ろう',
-  '生成AIでテストケースを作ろう'
+  // 'JSXの基本を理解しよう',
+  // 'コンポーネントの基本を理解しよう',
+  // '関数コンポーネントを作成しよう',
+  // 'propsでデータを受け渡す方法を理解しよう',
+  // '条件分岐で表示を切り替える方法を理解しよう',
+  // 'リストの表示方法を理解しよう',
+  // 'React Hooksの基本を理解しよう',
+  // 'useStateで状態を管理する方法を理解しよう',
+  // 'イベント処理を理解しよう',
+  // 'フォームの操作を理解しよう',
+  // 'useEffectで副作用を管理する方法を理解しよう',
+  // '生成AIによるエラーの対処方法を理解しよう',
+  // 'CSSによるスタイル調整方法を理解しよう',
+  // 'useContextでデータを共有する方法を理解しよう',
+  // 'Reactで簡単なカウンターアプリを作ろう',
+  // '生成AIでテストケースを作ろう'
 ];
 
 export function MainContent({ progress, setProgress }: Progress) {
@@ -69,6 +71,8 @@ export function MainContent({ progress, setProgress }: Progress) {
           ))}
         </ul>
       </section>
+
+      <ContactForm />
     </main>
   );
 }
