@@ -1,3 +1,4 @@
+import styles from './Header.module.css';
 
 type HeaderProps = {
     siteTitle: string;
@@ -13,14 +14,14 @@ export function Header({ siteTitle }: HeaderProps) {
     }
 
     return (
-        <header>
+        <header className={styles.header}>
             <nav>
                 <h1>
                     {siteTitle}
                 </h1>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#" onClick={handleClick} >会社概要</a></li>
+                <ul className={styles.navList}>
+                    <li className={styles.navItem}><a href="#">HOME</a></li>
+                    <li className={styles.navItem}><a href="#" onClick={handleClick}>会社概要</a></li>
                 </ul>
             </nav>
         </header>
